@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableSchedulerLock(defaultLockAtMostFor = "5m")
+@EnableSchedulerLock(defaultLockAtMostFor = "${shedlock.lock-at-most-for}")
 public class ShedLockConfig {
 
     @Bean

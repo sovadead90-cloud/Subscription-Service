@@ -24,7 +24,7 @@ public class SubscriptionExpirationScheduler {
     )
     @SchedulerLock(
             name = "subscriptionExpirationTask",
-            lockAtMostFor = "5m"
+            lockAtMostFor = "${shedlock.lock-at-most-for}"
     )
     public void downgradeExpiredSubscriptions() {
         List<String> downgradedLogins =
